@@ -4,6 +4,9 @@
 <head>
   <!-- Required meta tags always come first -->
   <meta charset="utf-8">
+
+  <!--viewport meta tag ensures that the screen width is set to the device width
+      and the content is rendered to this width. -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -14,46 +17,61 @@
 
 <body>
 
-  <header>
-      <div>
-          <div>
-              <div>
+  <!-- jumbotron sets content apart from the rest -->
+  <header class="jumbotron">
+      <!-- container class creates a 12-column container -->
+      <div class="container">
+          <!-- row class marks this div as a full row within the 12-column container specified above -->
+          <div class="row">
+              <!-- col-12 will make this occupy the 12 columns within the row for extra small screens,
+                  whereas col-sm-6 specifies that for small screens and above it will occupy only 6 -->
+              <div class="col-12 col-sm-6">
                   <h1>Ristorante con Fusion</h1>
                   <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
               </div>
-              <div>
+              <!-- by specifying col-12 and col-sm, it will make this div get stacked below the one above
+                  for extra small screens, whereas bigger screens will fill up the rest of the space,
+                  so it will be side by side with the above one that only occupies 6 columns -->
+              <div class="col-12 col-sm">
               </div>
           </div>
       </div>
   </header>
 
-  <div>
-      <div>
-          <div>
+  <div class="container">
+      <div class="row">
+          <!-- extra small screens will take up 12 columns, small ones will take up 4 and the rest from
+              medium and above will occupy 3 columns. order-sm-last will put this element last on the row
+              (to the right) -->
+          <div class="col-12 col-sm-4 order-sm-last col-md-3">
               <h3>Our Lipsmacking Culinary Creations</h3>
           </div>
-          <div>
+          <!-- by specifying the size classes this will make the element to be stacked below the one above
+              for extra small screens, and fill the rest of the space (8 columns for small, 9 for medium
+              and above) for the other sizes. order-sm-first will put this element first on the row (to the
+              left of the one above since it has order-sm-last) -->
+          <div class="col col-sm order-sm-first col-md">
               <h2>Uthappizza</h2>
               <p>A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
           </div>
       </div>
 
 
-      <div>
-          <div>
+      <div class="row">
+          <div class="col-12 col-sm-4 col-md-3">
               <h3>This Month's Promotions</h3>
           </div>
-          <div>
+          <div class="col col-sm col-md">
               <h2>Weekend Grand Buffet</h2>
               <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
           </div>
       </div>
 
-      <div>
-          <div>
+      <div class="row">
+          <div class="col-12 col-sm-4 order-sm-last col-md-3">
               <h3>Meet our Culinary Specialists</h3>
           </div>
-          <div>
+          <div class="col col-sm order-sm-first col-md">
               <h2>Alberto Somayya</h2>
               <h4>Executive Chef</h4>
               <p>Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
@@ -62,9 +80,11 @@
   </div>
 
   <footer>
-      <div>
-          <div>
-              <div>
+      <div class="container">
+          <div class="row">
+              <!-- extra small screens will occupy 4 columns whereas bigger ones will take 2
+                  offset-1 will offset the elements by one column to the right on all screens -->
+              <div class="col-4 offset-1 col-sm-2">
                   <h5>Links</h5>
                   <ul>
                       <li><a href="#">Home</a></li>
@@ -73,7 +93,8 @@
                       <li><a href="#">Contact</a></li>
                   </ul>
               </div>
-              <div>
+              <!-- extra small will occupy 7 (for a total of 11 with the above) and the rest 5 -->
+              <div class="col-7 col-sm-5">
                 <h5>Our Address</h5>
                 <address>
 		              121, Clear Water Bay Road<br>
@@ -84,7 +105,10 @@
 		              Email: <a href="mailto:confusion@food.net">confusion@food.net</a>
 		           </address>
               </div>
-              <div>
+              <!-- will be stacked below the two above elements for extra small sizes, and side by side
+                  with them for the other screen sizes (2 + 5 + 4 = 11 columns). In both cases the row
+                  ends up occupying 11 columns and will have the 1st column offset -->
+              <div class="col-12 col-sm-4">
                   <div>
                         <a href="http://google.com/+">Google+</a>
                         <a href="http://www.facebook.com/profile.php?id=">Facebook</a>
@@ -95,8 +119,9 @@
                   </div>
               </div>
           </div>
-          <div>
-              <div>
+          <div class="row">
+              <!-- will occupy enough columns as required by the content itself-->
+              <div class="col-auto">
                   <p>© Copyright 2018 Ristorante Con Fusion</p>
               </div>
           </div>
