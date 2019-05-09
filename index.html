@@ -12,6 +12,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
   <title>Ristorante Con Fusion</title>
 </head>
 
@@ -21,8 +22,9 @@
   <header class="jumbotron">
       <!-- container class creates a 12-column container -->
       <div class="container">
-          <!-- row class marks this div as a full row within the 12-column container specified above -->
-          <div class="row">
+          <!-- row class marks this div as a full row within the 12-column container specified above
+              row-header is one of our custom css classes defined in the styles.css file -->
+          <div class="row row-header">
               <!-- col-12 will make this occupy the 12 columns within the row for extra small screens,
                   whereas col-sm-6 specifies that for small screens and above it will occupy only 6 -->
               <div class="col-12 col-sm-6">
@@ -39,7 +41,11 @@
   </header>
 
   <div class="container">
-      <div class="row">
+      <!-- row-content is one of our custom css classes defined in the styles.css file
+          align-items-center is a Bootstrap class that leverages CSS Flexbox to vertically
+          align items to the center (or horizontally, if the content direction is top to down
+          instead of the row's left to right)-->
+      <div class="row row-content align-items-center">
           <!-- extra small screens will take up 12 columns, small ones will take up 4 and the rest from
               medium and above will occupy 3 columns. order-sm-last will put this element last on the row
               (to the right) -->
@@ -56,8 +62,8 @@
           </div>
       </div>
 
-
-      <div class="row">
+      <!-- row-content is one of our custom css classes defined in the styles.css file -->
+      <div class="row row-content align-items-center">
           <div class="col-12 col-sm-4 col-md-3">
               <h3>This Month's Promotions</h3>
           </div>
@@ -67,7 +73,8 @@
           </div>
       </div>
 
-      <div class="row">
+      <!-- row-content is one of our custom css classes defined in the styles.css file -->
+      <div class="row row-content align-items-center">
           <div class="col-12 col-sm-4 order-sm-last col-md-3">
               <h3>Meet our Culinary Specialists</h3>
           </div>
@@ -79,14 +86,16 @@
       </div>
   </div>
 
-  <footer>
+  <!-- footer is one of our custom css classes defined in the styles.css file -->
+  <footer class="footer">
       <div class="container">
           <div class="row">
               <!-- extra small screens will occupy 4 columns whereas bigger ones will take 2
                   offset-1 will offset the elements by one column to the right on all screens -->
               <div class="col-4 offset-1 col-sm-2">
                   <h5>Links</h5>
-                  <ul>
+                  <!-- list-unstyled removes bullet points from a list -->
+                  <ul class="list-unstyled">
                       <li><a href="#">Home</a></li>
                       <li><a href="#">About</a></li>
                       <li><a href="#">Menu</a></li>
@@ -107,9 +116,11 @@
               </div>
               <!-- will be stacked below the two above elements for extra small sizes, and side by side
                   with them for the other screen sizes (2 + 5 + 4 = 11 columns). In both cases the row
-                  ends up occupying 11 columns and will have the 1st column offset -->
-              <div class="col-12 col-sm-4">
-                  <div>
+                  ends up occupying 11 columns and will have the 1st column offset. align-self-center
+                  causes this content to align itself to the center of the content direction (so vertically
+                  in this case, as it's a column) -->
+              <div class="col-12 col-sm-4 align-self-center">
+                  <div class="text-center">
                         <a href="http://google.com/+">Google+</a>
                         <a href="http://www.facebook.com/profile.php?id=">Facebook</a>
                         <a href="http://www.linkedin.com/in/">LinkedIn</a>
@@ -120,8 +131,10 @@
               </div>
           </div>
           <div class="row">
-              <!-- will occupy enough columns as required by the content itself-->
-              <div class="col-auto">
+              <!-- will occupy enough columns as required by the content itself justify-content-center
+              is a Bootstrap class that leverages CSS Flexbox to horizontally align items to the center
+              (or vertically, if the content direction is top to down instead of the row's left to right)-->
+              <div class="col-auto justify-content-center">
                   <p>© Copyright 2018 Ristorante Con Fusion</p>
               </div>
           </div>
