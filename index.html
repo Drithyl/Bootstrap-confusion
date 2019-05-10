@@ -18,6 +18,39 @@
 
 <body>
 
+  <!-- navbar-expand-sm makes it be collapsed for xs and small screen sizes -->
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+      <!-- navbar-toggler is a specific Bootstrap class for a button in the navbar
+        that toggles its contents on and off, mostly for xs screens. data-toggle specifies
+        a JavaScript behaviour when clicked, and data-target is a CSS selector that acts
+        as the target for the behaviour, in this case the element with id Navbar -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+        <!-- navbar-toggler-icon adds an icon to indicate the toggling behaviour -->
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- navbar-brand allows you to display a branding for your page.
+          mr-auto means that the right margin will be set to autoThe href="#"
+          will bring users back to the home page when clicked. -->
+      <a class="navbar-brand mr-auto" href="#">Ristorante Con Fusion</a>
+      <!-- collapse relates to the data-toggle specified in the navbar-toggler button. It is
+        one of Bootstrap's JavaScript components. Anything enclosed in this div will be hidden
+        by default until the button is clicked, at which point it will get revealed -->
+      <div class="collapse navbar-collapse" id="Navbar">
+        <!-- navbar-nav helps display the list of links for a navbar. -->
+        <ul class="navbar-nav mr-auto">
+          <!-- nav-item is bootstrap for each of the navbar items that contain the links.
+              nav-link is the class used for the link tags themselves. active marks this
+              link as the active one, in which the user is currently on -->
+          <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./aboutus.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <!-- jumbotron sets content apart from the rest -->
   <header class="jumbotron">
       <!-- container class creates a 12-column container -->
@@ -97,7 +130,7 @@
                   <!-- list-unstyled removes bullet points from a list -->
                   <ul class="list-unstyled">
                       <li><a href="#">Home</a></li>
-                      <li><a href="#">About</a></li>
+                      <li><a href="./aboutus.html">About</a></li>
                       <li><a href="#">Menu</a></li>
                       <li><a href="#">Contact</a></li>
                   </ul>
