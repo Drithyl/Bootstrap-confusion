@@ -12,6 +12,13 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- Font Icons to be used. Font Icons are small images that act as fonts in that
+      they can also be styled -->
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
+  <!-- Our own stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
   <title>Ristorante Con Fusion</title>
 </head>
@@ -41,11 +48,13 @@
         <ul class="navbar-nav mr-auto">
           <!-- nav-item is bootstrap for each of the navbar items that contain the links.
               nav-link is the class used for the link tags themselves. active marks this
-              link as the active one, in which the user is currently on -->
-          <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="./aboutus.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+              link as the active one, in which the user is currently on. The span with class
+              fa and fa-home defines an icon font from the font awesome stylesheet. fa-lg means
+              larger icons and fa-{noun} are the different icons available -->
+          <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span>About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span>Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
         </ul>
       </div>
     </div>
@@ -142,9 +151,10 @@
 		              121, Clear Water Bay Road<br>
 		              Clear Water Bay, Kowloon<br>
 		              HONG KONG<br>
-		              Tel.: +852 1234 5678<br>
-		              Fax: +852 8765 4321<br>
-		              Email: <a href="mailto:confusion@food.net">confusion@food.net</a>
+                  <!-- can use both <i> and <span> elements to include font awesome icons -->
+		              <i class="fa fa-phone fa-lg"></i> +852 1234 5678<br>
+		              <i class="fa fa-fax fa-lg"></i> +852 8765 4321<br>
+		              <i class="fa fa-envelope fa-lg"></i> <a href="mailto:confusion@food.net">confusion@food.net</a>
 		           </address>
               </div>
               <!-- will be stacked below the two above elements for extra small sizes, and side by side
@@ -154,12 +164,14 @@
                   in this case, as it's a column) -->
               <div class="col-12 col-sm-4 align-self-center">
                   <div class="text-center">
-                        <a href="http://google.com/+">Google+</a>
-                        <a href="http://www.facebook.com/profile.php?id=">Facebook</a>
-                        <a href="http://www.linkedin.com/in/">LinkedIn</a>
-                        <a href="http://twitter.com/">Twitter</a>
-                        <a href="http://youtube.com/">YouTube</a>
-                        <a href="mailto:">Mail</a>
+                        <!-- btn is a Bootstrap class for buttons. btn-social-icon is part of Bootstrap-social for
+                            social network related icons like btn-google, etc. -->
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
                   </div>
               </div>
           </div>
