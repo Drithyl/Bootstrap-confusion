@@ -76,7 +76,14 @@
               <!-- by specifying col-12 and col-sm, it will make this div get stacked below the one above
                   for extra small screens, whereas bigger screens will fill up the rest of the space,
                   so it will be side by side with the above one that only occupies 6 columns -->
-              <div class="col-12 col-sm">
+              <div class="col-6 col-sm-3 align-self-center">
+                    <img src="img/logo.png" class="img-fluid">
+              </div>
+
+              <div class="col-6 col-sm-3 align-self-center">
+                <a class="btn btn-small btn-block btn-warning" href="#reserve-card">
+                  Reserve Table
+                </a>
               </div>
           </div>
       </div>
@@ -91,14 +98,14 @@
           <!-- extra small screens will take up 12 columns, small ones will take up 4 and the rest from
               medium and above will occupy 3 columns. order-sm-last will put this element last on the row
               (to the right) -->
-          <div class="col-12 col-sm-4 order-sm-last col-md-3">
+          <div class="col-12 col-sm-4 col-md-3 order-sm-last">
               <h3>Our Lipsmacking Culinary Creations</h3>
           </div>
           <!-- by specifying the size classes this will make the element to be stacked below the one above
               for extra small screens, and fill the rest of the space (8 columns for small, 9 for medium
               and above) for the other sizes. order-sm-first will put this element first on the row (to the
               left of the one above since it has order-sm-last) -->
-          <div class="col col-sm order-sm-first col-md">
+          <div class="col col-sm col-md order-sm-first">
               <!-- media is a bootstrap class to make a sort of card with an image and a body with a description -->
               <div class="media">
                 <!-- d-flex is a bootstrap class for flexbox purposes that we need to add an image to a media class element.
@@ -111,21 +118,27 @@
                   <!-- mt-0 is a bootstrap class that means margin-top 0, see https://getbootstrap.com/docs/4.0/utilities/spacing/
                     badge is a class that turns a span into a badge to draw the attention of the user; badge-danger makes it styled red.
                     badge-pill makes the corners rounded like a pill and badge-secondary is another color style -->
-                  <h2 class="mt-0">Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-secondary">HOT</span></h2>
+                  <h2 class="mt-0">Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-secondary">$4.99</span></h2>
                   <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
                 </div>
               </div>
           </div>
       </div>
 
-      <!-- row-content is one of our custom css classes defined in the styles.css file -->
       <div class="row row-content align-items-center">
-          <div class="col-12 col-sm-4 col-md-3">
+          <div class="col-12 col-sm-4 col-md-3 order-sm-first">
               <h3>This Month's Promotions</h3>
           </div>
-          <div class="col col-sm col-md">
-              <h2>Weekend Grand Buffet</h2>
-              <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+
+          <div class="col col-sm col-md order-sm-last">
+            <div class="media">
+              <div class="media-body">
+                <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
+                <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person.</p>
+              </div>
+
+              <img class="d-flex ml-3 img-thumbnail align-self-center" src="img/buffet.png" alt="uthappizza">
+            </div>
           </div>
       </div>
 
@@ -148,6 +161,77 @@
               </div>
           </div>
       </div>
+
+      <div class="row row-content">
+          <div class="col-12 col-sm-8 offset-sm-2">
+            <div class="card" id="reserve-card">
+              <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
+              <div class="card-body">
+                <form>
+                  <div class="form-group row">
+                    <label for="guests" class="col-sm-2 col-form-label">Number of Guests</label>
+
+                    <div class="col-sm-6 align-self-center">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="1" name="guests">
+                        <label class="form-check-label">1</label>
+                      </div>
+
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="2" name="guests">
+                        <label class="form-check-label">2</label>
+                      </div>
+
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="3" name="guests">
+                        <label class="form-check-label">3</label>
+                      </div>
+
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="4" name="guests">
+                        <label class="form-check-label">4</label>
+                      </div>
+
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="5" name="guests">
+                        <label class="form-check-label">5</label>
+                      </div>
+
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="6" name="guests">
+                        <label class="form-check-label">6</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <!-- This one will occupy the entire row for xs and s screen sizes and 2 for the rest -->
+                    <label for="dateandtime" class="col-12 col-sm-2 col-form-label">Date and Time</label>
+                    <!-- This one will occupy 5 rows for xs and s screen sizes and 3 for the rest -->
+                    <div class="col-6 col-sm-4 align-self-center">
+                      <input type="date" class="form-control" id="date" name="date">
+                    </div>
+                    <!-- This one will occupy 7 rows for xs and s screen sizes and 7 for the rest -->
+                    <div class="col-6 col-sm-4 align-self-center">
+                      <input type="time" class="form-control" id="time" name="time">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-10">
+                      <button type="submit" class="btn btn-primary">
+                        Reserve
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+           <div class="col-12 col-md">
+          </div>
+     </div>
   </div>
 
   <!-- footer is one of our custom css classes defined in the styles.css file -->
