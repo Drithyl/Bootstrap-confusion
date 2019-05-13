@@ -63,7 +63,46 @@
                 <p>Started in 2010, Ristorante con Fusion quickly established itself as a culinary icon par excellence in Hong Kong. With its unique brand of world fusion cuisine that can be found nowhere else, it enjoys patronage from the A-list clientele in Hong Kong.  Featuring four of the best three-star Michelin chefs in the world, you never know what will arrive on your plate the next time you visit us.</p>
                 <p>The restaurant traces its humble beginnings to <em>The Frying Pan</em>, a successful chain started by our CEO, Mr. Peter Pan, that featured for the first time the world's best cuisines in a pan.</p>
             </div>
-            <div>
+            <div class="col-sm">
+              <div class="card">
+                <!-- The header row for a Bootstrap card, bg-primary is a background color -->
+                <h3 class="card-header bg-primary text-white">Facts at a Glance</h3>
+                <!-- card-body is a Bootstrap class for the body of the card -->
+                <div class="card-body">
+                  <!-- an HTML element to define a description list -->
+                  <dl class="row">
+                    <!-- dt is an HTML element to define the term/name of an item in the list -->
+                    <dt class="col-6">Started</dt>
+                    <!-- dd is an HTML element to describe item -->
+                    <dd class="col-6">3 Feb. 2013</dd>
+                    <dt class="col-6">Major Stake Holder</dt>
+                    <dd class="col-6">HK Fine Foods Inc.</dd>
+                    <dt class="col-6">Last Year's Turnover</dt>
+                    <dd class="col-6">$1,250,375</dd>
+                    <dt class="col-6">Employees</dt>
+                    <dd class="col-6">40</dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <!-- Applying both the card and card-body means that the card won't have a header -->
+              <div class="card card-body bg-light">
+                <!-- HTML element to write text within a block. blockquote class is bootstrap's own styling -->
+                <blockquote class="blockquote">
+                  <!-- mb-0 class meants a margin-bottom of 0 -->
+                  <p class="mb-0">
+                    You better cut the pizza in four pieces because I'm not hungry enough to eat six.
+                  </p>
+                  <!-- a footer with the blockquote-footer class inside a blockquote will add a footer note to it -->
+                  <footer class="blockquote-footer">
+                    Yogi Berra,
+                    <!-- HTML element for citing sources -->
+                    <cite title="Source Title">The Wit and Wisdom of Yogi Berra, P. Pepe, Diversion Books, 2014</cite>
+                  </footer>
+                </blockquote>
+              </div>
             </div>
         </div>
 
@@ -83,6 +122,63 @@
                 <h3>Alberto Somayya <small>Executive Chef</small></h3>
                 <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, <em>Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!</em></p>
             </div>
+       </div>
+
+       <div class="row row-content">
+         <div class="col-12 col-sm-9">
+           <h2>Facts &amp; Figures</h2>
+           <!-- Bootstrap class to wrap around a table to make it responsive (scrolls on smaller screens) -->
+           <div class="table-responsive">
+             <!-- table is an HTML element, and the Bootstrap class table styles it. Bootstrap table-striped class makes table rows of alternate colors -->
+            <table class="table table-striped">
+              <!-- thead is an HTML table header, the class thead-dark is a Bootstrap style -->
+              <thead class="thead-dark">
+                <!-- tr are HTML table rows -->
+                <tr>
+                  <!-- th are header cells in an HTML table, in this case column headers (i.e. topmost element) -->
+                  <th>&nbsp;</th>
+                  <th>2013</th>
+                  <th>2014</th>
+                  <th>2015</th>
+                </tr>
+              </thead>
+              <!-- tbody is the body of an HTML table -->
+              <tbody>
+                <tr>
+                  <!-- the header of this particular row (i.e. leftmost element) -->
+                  <th>Employees</th>
+                  <!-- th are standard cells in an HTML table (as opposed to header cells) -->
+                  <td>15</td>
+                  <td>30</td>
+                  <td>40</td>
+                </tr>
+
+                <tr>
+                  <th>Guests Served</th>
+                  <td>1500</td>
+                  <td>45000</td>
+                  <td>100,000</td>
+                </tr>
+
+                <tr>
+                  <th>Special Events</th>
+                  <td>3</td>
+                  <td>20</td>
+                  <td>45</td>
+                </tr>
+
+                <tr>
+                  <th>Annual Turnover</th>
+                  <td>$251,325</td>
+                  <td>$1,250,375</td>
+                  <td>~$3,000,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+         </div>
+
+         <div class="col-12 col-sm-3"></div>
        </div>
 
     </div>
