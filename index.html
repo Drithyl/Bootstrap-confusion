@@ -39,7 +39,7 @@
       <!-- navbar-brand allows you to display a branding for your page.
           mr-auto means that the right margin will be set to autoThe href="#"
           will bring users back to the home page when clicked. -->
-      <a class="navbar-brand mr-auto" href="#">Ristorante Con Fusion</a>
+      <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="30" width:"41"></a>
       <!-- collapse relates to the data-toggle specified in the navbar-toggler button. It is
         one of Bootstrap's JavaScript components. Anything enclosed in this div will be hidden
         by default until the button is clicked, at which point it will get revealed -->
@@ -99,8 +99,20 @@
               and above) for the other sizes. order-sm-first will put this element first on the row (to the
               left of the one above since it has order-sm-last) -->
           <div class="col col-sm order-sm-first col-md">
-              <h2>Uthappizza</h2>
-              <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+              <!-- media is a bootstrap class to make a sort of card with an image and a body with a description -->
+              <div class="media">
+                <!-- d-flex is a bootstrap class for flexbox purposes that we need to add an image to a media class element.
+                    mr-X means margin-right X, see see https://getbootstrap.com/docs/4.0/utilities/spacing/,
+                    we need it so the description is slightly set apart from the image.
+                    img-thumbnail resizes the image to become a thumbnail (a small sized image) -->
+                <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/uthappizza.png" alt="uthappizza">
+                <!-- the media-body bootstrap class wraps the content that becomes the body of the media card -->
+                <div class="media-body">
+                  <!-- mt-0 is a bootstrap class that means margin-top 0, see https://getbootstrap.com/docs/4.0/utilities/spacing/ -->
+                  <h2 class="mt-0">Uthappizza</h2>
+                  <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+                </div>
+              </div>
           </div>
       </div>
 
@@ -121,9 +133,17 @@
               <h3>Meet our Culinary Specialists</h3>
           </div>
           <div class="col col-sm order-sm-first col-md">
-              <h2>Alberto Somayya</h2>
-              <h4>Executive Chef</h4>
-              <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+              <div class="media">
+                <!-- mr-X means margin-right, see https://getbootstrap.com/docs/4.0/utilities/spacing/  -->
+                <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/alberto.png" alt="alberto">
+
+                <div class="media-body">
+                  <!-- mt-X means margin-top, see https://getbootstrap.com/docs/4.0/utilities/spacing/  -->
+                  <h2 class="mt-0">Alberto Somayya</h2>
+                  <h4>Executive Chef</h4>
+                  <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+                </div>
+              </div>
           </div>
       </div>
   </div>
