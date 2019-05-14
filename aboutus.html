@@ -113,58 +113,84 @@
             <div class="col-12">
                 <h2>Corporate Leadership</h2>
 
-                <!-- nav-tabs organizes content by tabs, displaying only whichever tab the user clicks on -->
-                <ul class="nav nav-tabs">
-                  <!-- specifies this list item as actually being part of a nav scheme -->
-                  <li class="nav-item">
-                    <!-- role is a descriptive attribute of what the purpose of the element actually is.
-                        For instance, this is a link HTML element, but it's used to serve as a tab, not
-                        as a link to a different website (therefore the href to an id, linking to content).
-                        data-toggle is an HTML5 data attribute that automatically hooks up the element to the type of widget it is. -->
-                    <a class="nav-link active" href="#peter" role="tab" data-toggle="tab">Peter Pan, CEO</a>
-                  </li>
+                <!-- id accordion is needed to reference this div as the parent of the data
+                    that will be shown inside each of the accordion tabs, using the data-parent
+                    attribute and a CSS selector -->
+                <div id="accordion">
+                  <!-- each of the accordion elements will essentially be a bootstrap card with the
+                      body either hidden or active, and the header always showing -->
+                  <div class="card">
+                    <!-- specify this div as the header of the card that will always be shown -->
+                    <div class="card-header" role="tab" id="peterhead">
+                      <h3 class="mb-0">
+                        <!-- add a data-toggle for the collapse plugin behaviour, and the target being
+                            the div that wraps around the card-body div. Must be a link <a> element as the
+                            user needs to click on it for the body below to deploy or hide -->
+                        <a data-toggle="collapse" data-target="#peter">
+                          Peter Pan <small>Chief Epicurious Officer</small>
+                        </a>
+                      </h3>
+                    </div>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="#danny" role="tab" data-toggle="tab">Danny Witherspoon, Chief Food Officer</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="#agumbe" role="tab" data-toggle="tab">Agumbe Tang, Chief Taste Officer</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="#alberto" role="tab" data-toggle="tab">Alberto Somayya, Executive Chef</a>
-                  </li>
-                </ul>
-
-                <!-- tab-content specifies that the content within the div is the content that a group of tabs will contain.
-                    This class also gets modified in our own stylesheet, styles.css, to give tabs a clean border all around -->
-                <div class="tab-content">
-                  <!-- tab-pane marks the content within the div as the content for one specific tab.
-                      fade class is a bootstrap animation class that enables fading in. The show class
-                      specifies that the content inside this div should be shown when the page is first rendered.
-                      tabpanel role describes that this is meant to be the content of a tab -->
-                  <div class="tab-pane fade show active" id="peter" role="tabpanel">
-                    <h3>Peter Pan <small>Chief Epicurious Officer</small></h3>
-                    <!-- class d-none sets the display value to none for all screens. d-{screen}-none affects
-                        all screens of the specified size and above. In this case these paragraphs will be hidden
-                        only in the extra small sizes -->
-                    <p class="d-none d-sm-block">Our CEO, Peter, credits his hardworking East Asian immigrant parents who undertook the arduous journey to the shores of America with the intention of giving their children the best future. His mother's wizardy in the kitchen whipping up the tastiest dishes with whatever is available inexpensively at the supermarket, was his first inspiration to create the fusion cuisines for which <em>The Frying Pan</em> became well known. He brings his zeal for fusion cuisines to this restaurant, pioneering cross-cultural culinary connections.</p>
+                    <!-- collapse plugin to mark this as the collapsing part, and the id to reference it,
+                        as well as the data-parent that specifies that this collapsable is part of the whole
+                        accordion element that we're constructing -->
+                    <div class="collapse show" id="peter" role="tabpanel" data-parent="#accordion">
+                      <div class="card-body">
+                        <!-- class d-none sets the display value to none for all screens. d-{screen}-none affects
+                            all screens of the specified size and above. In this case these paragraphs will be hidden
+                            only in the extra small sizes -->
+                        <p class="d-none d-sm-block">Our CEO, Peter, credits his hardworking East Asian immigrant parents who undertook the arduous journey to the shores of America with the intention of giving their children the best future. His mother's wizardy in the kitchen whipping up the tastiest dishes with whatever is available inexpensively at the supermarket, was his first inspiration to create the fusion cuisines for which <em>The Frying Pan</em> became well known. He brings his zeal for fusion cuisines to this restaurant, pioneering cross-cultural culinary connections.</p>
+                      </div>
+                    </div>
                   </div>
 
-                  <div class="tab-pane fade" id="danny" role="tabpanel">
-                    <h3>Dhanasekaran Witherspoon <small>Chief Food Officer</small></h3>
-                    <p class="d-none d-sm-block">Our CFO, Danny, as he is affectionately referred to by his colleagues, comes from a long established family tradition in farming and produce. His experiences growing up on a farm in the Australian outback gave him great appreciation for varieties of food sources. As he puts it in his own words, <em>Everything that runs, wins, and everything that stays, pays!</em></p>
+                  <div class="card">
+                    <div class="card-header" role="tab" id="dannyhead">
+                      <h3 class="mb-0">
+                        <a data-toggle="collapse" data-target="#danny">
+                          Dhanasekaran Witherspoon <small>Chief Food Officer</small>
+                        </a>
+                      </h3>
+                    </div>
+
+                    <div class="collapse" id="danny" role="tabpanel" data-parent="#accordion">
+                      <div class="card-body">
+                        <p class="d-none d-sm-block">Our CFO, Danny, as he is affectionately referred to by his colleagues, comes from a long established family tradition in farming and produce. His experiences growing up on a farm in the Australian outback gave him great appreciation for varieties of food sources. As he puts it in his own words, <em>Everything that runs, wins, and everything that stays, pays!</em></p>
+                      </div>
+                    </div>
                   </div>
 
-                  <div class="tab-pane fade" id="agumbe" role="tabpanel">
-                    <h3>Agumbe Tang <small>Chief Taste Officer</small></h3>
-                    <p class="d-none d-sm-block">Blessed with the most discerning gustatory sense, Agumbe, our CTO, personally ensures that every dish that we serve meets his exacting tastes. Our chefs dread the tongue lashing that ensues if their dish does not meet his exacting standards. He lives by his motto, <em>You click only if you survive my lick.</em></p>
+                  <div class="card">
+                    <div class="card-header" role="tab" id="agumbehead">
+                      <h3 class="mb-0">
+                        <a data-toggle="collapse" data-target="#agumbe">
+                          Agumbe Tang <small>Chief Taste Officer</small>
+                        </a>
+                      </h3>
+                    </div>
+
+                    <div class="collapse" id="agumbe" role="tabpanel" data-parent="#accordion">
+                      <div class="card-body">
+                        <p class="d-none d-sm-block">Blessed with the most discerning gustatory sense, Agumbe, our CTO, personally ensures that every dish that we serve meets his exacting tastes. Our chefs dread the tongue lashing that ensues if their dish does not meet his exacting standards. He lives by his motto, <em>You click only if you survive my lick.</em></p>
+                      </div>
+                    </div>
                   </div>
 
-                  <div class="tab-pane fade" id="alberto" role="tabpanel">
-                    <h3>Alberto Somayya <small>Executive Chef</small></h3>
-                    <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, <em>Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!</em></p>
+                  <div class="card">
+                    <div class="card-header" role="tab" id="albertohead">
+                      <h3 class="mb-0">
+                        <a data-toggle="collapse" data-target="#alberto">
+                          Alberto Somayya <small>Executive Chef</small>
+                        </a>
+                      </h3>
+                    </div>
+
+                    <div class="collapse" id="alberto" role="tabpanel" data-parent="#accordion">
+                      <div class="card-body">
+                        <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, <em>Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!</em></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
             </div>
