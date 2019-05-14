@@ -56,9 +56,71 @@
           <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span>Menu</a></li>
           <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
         </ul>
+
+        <span class="navbar-text">
+          <!-- data-toggle modal triggers the JS behaviour included in bootstrap,
+              and data-target sets the target to be the loginModal we created. -->
+          <a data-toggle="modal" data-target="#loginModal">
+            <span class="fa fa-sign-in"></span> Login
+          </a>
+        </span>
       </div>
     </div>
   </nav>
+
+  <!-- Modal code here. Bootstrap recommends that all modal code be at the start of the page. -->
+  <!-- modal bootstrap's class allows us to create modals. fade gives it the fade in animation. -->
+  <div id="loginModal" class="modal fade" role="dialog">
+    <!-- modal-dialog specifies the type of modal we will be using. -->
+    <div class="modal-dialog modal-lg" role="content">
+      <!-- modal-content sets the content of the modal within the div -->
+      <div class="modal-content">
+        <!-- modal-header specifies the header of the modal content (optional) -->
+        <div class="modal-header">
+          <!-- style this as a modal-title -->
+          <h4 class="modal-title">Login</h4>
+
+          <!-- make a button to close the modal, which requires the hook data-dismiss modal -->
+          <button type="button" class="close" data-dismiss="modal">
+            <!-- cross symbol -->
+            &times;
+          </button>
+        </div>
+
+        <!-- modal-body specifies the body of the modal content (optional) -->
+        <div class="modal-body">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-sm-4">
+                <!-- sr-only hides skip links (in this case, the labels). See https://v4-alpha.getbootstrap.com/getting-started/accessibility/ -->
+                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+              </div>
+
+              <div class="form-group col-sm-4">
+                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+              </div>
+
+              <div class="col-sm-auto">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label">
+                    Remember me
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- jumbotron sets content apart from the rest -->
   <header class="jumbotron">
@@ -81,7 +143,11 @@
               </div>
 
               <div class="col-6 col-sm-3 align-self-center">
-                <a class="btn btn-small btn-block btn-warning" href="#reserve-card">
+                <!-- data-toggle tooltip allows us to add a tooltip to this element thanks to the help of a script that we invoke
+                    at the bottom of this page. data-html true means we can construct the tooltip using HTML. data-placement bottom
+                    means the tooltip will be added to the bottom of the element. title is where the content of the tooltip will be
+                    enclosed, where we can use HTML. -->
+                <a class="btn btn-small btn-block btn-warning" data-toggle="tooltip" data-html="true" data-placement="bottom" title="Or Call us at <br><strong>+852 12345678</strong>" href="#reserve-card">
                   Reserve Table
                 </a>
               </div>
@@ -298,6 +364,15 @@
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- this script is required to activate tooltips. It uses jQuery to call upon the tooltip()
+      functionality for any element with the attribute data-toggle set to "tooltip" -->
+  <script>
+    $(document).ready(function()
+    {
+      $("[data-toggle='tooltip']").tooltip();
+    });
+  </script>
 </body>
 
 </html>
