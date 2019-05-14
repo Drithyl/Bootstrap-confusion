@@ -156,206 +156,271 @@
   </header>
 
   <div class="container">
+    <div class="row row-content">
+      <div class="col">
+        <!-- declare a carousel with the class carousel and slide (makes it slideable). We have
+            also added some CSS styling to the carousel class in our styles.css sheet.
+            The data-ride attribute is used by Bootstrap to trigger the JS behaviour needed -->
+        <div id="mycarousel" class="carousel slide" data-ride="carousel">
+          <!-- wrap the carousel content in the carousel-inner class -->
+          <div class="carousel-inner" role="listbox">
+            <!-- carousel-item marks this div as an item within the carousel. There is
+                some extra styling done for this element in our styles.css sheet. -->
+            <div class="carousel-item active">
+              <!-- d-block bootstrap class just sets display attribute to block,
+                  img-fluid makes it scale to the parent element. We have added
+                  styling to images within carousel-item classes in our styles.css -->
+              <img class="d-block img-fluid" src="img/uthappizza.png" alt="uthappizza">
+
+              <!-- carousel-caption marks this content as the caption of the carousel item.
+                  d-none with d-md-block will make the caption not show in screens of sizes below medium. -->
+              <div class="carousel-caption d-none d-md-block">
+                <!-- mt-0 is a bootstrap class that means margin-top 0, see https://getbootstrap.com/docs/4.0/utilities/spacing/
+                  badge is a class that turns a span into a badge to draw the attention of the user; badge-danger makes it styled red.
+                  badge-pill makes the corners rounded like a pill and badge-secondary is another color style -->
+                <h2 class="mt-0">Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-secondary">$4.99</span></h2>
+                <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="img/buffet.png" alt="buffet">
+
+              <div class="carousel-caption d-none d-md-block">
+                <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
+                <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="img/alberto.png" alt="alberto">
+
+              <div class="carousel-caption d-none d-md-block">
+                <!-- mt-X means margin-top, see https://getbootstrap.com/docs/4.0/utilities/spacing/  -->
+                <h2 class="mt-0">Alberto Somayya</h2>
+                <h4>Executive Chef</h4>
+                <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- carousel-indicators are small tabs that show which of the carousel item is active -->
+          <ol class="carousel-indicators">
+            <!-- targets the id we gave the carousel. data-slide-to shifts to given index of carousel when element is clicked -->
+            <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#mycarousel" data-slide-to="1"></li>
+            <li data-target="#mycarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- carousel-control-prev designates this element to be a previous arrow to slide to the previous side.
+              data-slide set to "prev" triggers this behaviour when clicked -->
+          <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+            <!-- carousel-control-prev-icon gives the appearance of a previous arrow icon -->
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+
+          <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+    </div>
       <!-- row-content is one of our custom css classes defined in the styles.css file
           align-items-center is a Bootstrap class that leverages CSS Flexbox to vertically
           align items to the center (or horizontally, if the content direction is top to down
           instead of the row's left to right)-->
-      <div class="row row-content align-items-center">
-          <!-- extra small screens will take up 12 columns, small ones will take up 4 and the rest from
-              medium and above will occupy 3 columns. order-sm-last will put this element last on the row
-              (to the right) -->
-          <div class="col-12 col-sm-4 col-md-3 order-sm-last">
-              <h3>Our Lipsmacking Culinary Creations</h3>
+    <div class="row row-content align-items-center">
+      <!-- extra small screens will take up 12 columns, small ones will take up 4 and the rest from
+          medium and above will occupy 3 columns. order-sm-last will put this element last on the row
+          (to the right) -->
+      <div class="col-12 col-sm-4 col-md-3 order-sm-last">
+        <h3>Our Lipsmacking Culinary Creations</h3>
+      </div>
+      <!-- by specifying the size classes this will make the element to be stacked below the one above
+          for extra small screens, and fill the rest of the space (8 columns for small, 9 for medium
+          and above) for the other sizes. order-sm-first will put this element first on the row (to the
+          left of the one above since it has order-sm-last) -->
+      <div class="col col-sm col-md order-sm-first">
+        <!-- media is a bootstrap class to make a sort of card with an image and a body with a description -->
+        <div class="media">
+          <!-- d-flex is a bootstrap class for flexbox purposes that we need to add an image to a media class element.
+              mr-X means margin-right X, see see https://getbootstrap.com/docs/4.0/utilities/spacing/,
+              we need it so the description is slightly set apart from the image.
+              img-thumbnail resizes the image to become a thumbnail (a small sized image) -->
+          <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/uthappizza.png" alt="uthappizza">
+          <!-- the media-body bootstrap class wraps the content that becomes the body of the media card -->
+          <div class="media-body">
+            <h2 class="mt-0">Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-secondary">$4.99</span></h2>
+            <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
           </div>
-          <!-- by specifying the size classes this will make the element to be stacked below the one above
-              for extra small screens, and fill the rest of the space (8 columns for small, 9 for medium
-              and above) for the other sizes. order-sm-first will put this element first on the row (to the
-              left of the one above since it has order-sm-last) -->
-          <div class="col col-sm col-md order-sm-first">
-              <!-- media is a bootstrap class to make a sort of card with an image and a body with a description -->
-              <div class="media">
-                <!-- d-flex is a bootstrap class for flexbox purposes that we need to add an image to a media class element.
-                    mr-X means margin-right X, see see https://getbootstrap.com/docs/4.0/utilities/spacing/,
-                    we need it so the description is slightly set apart from the image.
-                    img-thumbnail resizes the image to become a thumbnail (a small sized image) -->
-                <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/uthappizza.png" alt="uthappizza">
-                <!-- the media-body bootstrap class wraps the content that becomes the body of the media card -->
-                <div class="media-body">
-                  <!-- mt-0 is a bootstrap class that means margin-top 0, see https://getbootstrap.com/docs/4.0/utilities/spacing/
-                    badge is a class that turns a span into a badge to draw the attention of the user; badge-danger makes it styled red.
-                    badge-pill makes the corners rounded like a pill and badge-secondary is another color style -->
-                  <h2 class="mt-0">Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-secondary">$4.99</span></h2>
-                  <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-content align-items-center">
+      <div class="col-12 col-sm-4 col-md-3 order-sm-first">
+        <h3>This Month's Promotions</h3>
+      </div>
+
+      <div class="col col-sm col-md order-sm-last">
+        <div class="media">
+          <div class="media-body">
+            <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
+            <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person.</p>
+          </div>
+
+          <img class="d-flex ml-3 img-thumbnail align-self-center" src="img/buffet.png" alt="uthappizza">
+        </div>
+      </div>
+    </div>
+
+    <!-- row-content is one of our custom css classes defined in the styles.css file -->
+    <div class="row row-content align-items-center">
+      <div class="col-12 col-sm-4 order-sm-last col-md-3">
+        <h3>Meet our Culinary Specialists</h3>
+      </div>
+      <div class="col col-sm order-sm-first col-md">
+        <div class="media">
+          <!-- mr-X means margin-right, see https://getbootstrap.com/docs/4.0/utilities/spacing/  -->
+          <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/alberto.png" alt="alberto">
+
+          <div class="media-body">
+            <h2 class="mt-0">Alberto Somayya</h2>
+            <h4>Executive Chef</h4>
+            <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-content">
+      <div class="col-12 col-sm-8 offset-sm-2">
+        <div class="card" id="reserve-card">
+          <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
+          <div class="card-body">
+            <form>
+              <div class="form-group row">
+                <label for="guests" class="col-sm-2 col-form-label">Number of Guests</label>
+
+                <div class="col-sm-6 align-self-center">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="1" name="guests">
+                    <label class="form-check-label">1</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="2" name="guests">
+                    <label class="form-check-label">2</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="3" name="guests">
+                    <label class="form-check-label">3</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="4" name="guests">
+                    <label class="form-check-label">4</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="5" name="guests">
+                    <label class="form-check-label">5</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="6" name="guests">
+                    <label class="form-check-label">6</label>
+                  </div>
                 </div>
               </div>
-          </div>
-      </div>
 
-      <div class="row row-content align-items-center">
-          <div class="col-12 col-sm-4 col-md-3 order-sm-first">
-              <h3>This Month's Promotions</h3>
-          </div>
-
-          <div class="col col-sm col-md order-sm-last">
-            <div class="media">
-              <div class="media-body">
-                <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
-                <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person.</p>
-              </div>
-
-              <img class="d-flex ml-3 img-thumbnail align-self-center" src="img/buffet.png" alt="uthappizza">
-            </div>
-          </div>
-      </div>
-
-      <!-- row-content is one of our custom css classes defined in the styles.css file -->
-      <div class="row row-content align-items-center">
-          <div class="col-12 col-sm-4 order-sm-last col-md-3">
-              <h3>Meet our Culinary Specialists</h3>
-          </div>
-          <div class="col col-sm order-sm-first col-md">
-              <div class="media">
-                <!-- mr-X means margin-right, see https://getbootstrap.com/docs/4.0/utilities/spacing/  -->
-                <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/alberto.png" alt="alberto">
-
-                <div class="media-body">
-                  <!-- mt-X means margin-top, see https://getbootstrap.com/docs/4.0/utilities/spacing/  -->
-                  <h2 class="mt-0">Alberto Somayya</h2>
-                  <h4>Executive Chef</h4>
-                  <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+              <div class="form-group row">
+                <!-- This one will occupy the entire row for xs and s screen sizes and 2 for the rest -->
+                <label for="dateandtime" class="col-12 col-sm-2 col-form-label">Date and Time</label>
+                <!-- This one will occupy 5 rows for xs and s screen sizes and 3 for the rest -->
+                <div class="col-6 col-sm-4 align-self-center">
+                  <input type="date" class="form-control" id="date" name="date">
+                </div>
+                <!-- This one will occupy 7 rows for xs and s screen sizes and 7 for the rest -->
+                <div class="col-6 col-sm-4 align-self-center">
+                  <input type="time" class="form-control" id="time" name="time">
                 </div>
               </div>
+
+              <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                  <button type="submit" class="btn btn-primary">
+                    Reserve
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
+        </div>
       </div>
 
-      <div class="row row-content">
-          <div class="col-12 col-sm-8 offset-sm-2">
-            <div class="card" id="reserve-card">
-              <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-              <div class="card-body">
-                <form>
-                  <div class="form-group row">
-                    <label for="guests" class="col-sm-2 col-form-label">Number of Guests</label>
-
-                    <div class="col-sm-6 align-self-center">
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="1" name="guests">
-                        <label class="form-check-label">1</label>
-                      </div>
-
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="2" name="guests">
-                        <label class="form-check-label">2</label>
-                      </div>
-
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="3" name="guests">
-                        <label class="form-check-label">3</label>
-                      </div>
-
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="4" name="guests">
-                        <label class="form-check-label">4</label>
-                      </div>
-
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="5" name="guests">
-                        <label class="form-check-label">5</label>
-                      </div>
-
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="6" name="guests">
-                        <label class="form-check-label">6</label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <!-- This one will occupy the entire row for xs and s screen sizes and 2 for the rest -->
-                    <label for="dateandtime" class="col-12 col-sm-2 col-form-label">Date and Time</label>
-                    <!-- This one will occupy 5 rows for xs and s screen sizes and 3 for the rest -->
-                    <div class="col-6 col-sm-4 align-self-center">
-                      <input type="date" class="form-control" id="date" name="date">
-                    </div>
-                    <!-- This one will occupy 7 rows for xs and s screen sizes and 7 for the rest -->
-                    <div class="col-6 col-sm-4 align-self-center">
-                      <input type="time" class="form-control" id="time" name="time">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <div class="offset-sm-2 col-sm-10">
-                      <button type="submit" class="btn btn-primary">
-                        Reserve
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-           <div class="col-12 col-md">
-          </div>
-     </div>
+      <div class="col-12 col-md">
+      </div>
+    </div>
   </div>
 
   <!-- footer is one of our custom css classes defined in the styles.css file -->
   <footer class="footer">
-      <div class="container">
-          <div class="row">
-              <!-- extra small screens will occupy 4 columns whereas bigger ones will take 2
-                  offset-1 will offset the elements by one column to the right on all screens -->
-              <div class="col-4 offset-1 col-sm-2">
-                  <h5>Links</h5>
-                  <!-- list-unstyled removes bullet points from a list -->
-                  <ul class="list-unstyled">
-                      <li><a href="#">Home</a></li>
-                      <li><a href="./aboutus.html">About</a></li>
-                      <li><a href="#">Menu</a></li>
-                      <li><a href="./contactus.html">Contact</a></li>
-                  </ul>
-              </div>
-              <!-- extra small will occupy 7 (for a total of 11 with the above) and the rest 5 -->
-              <div class="col-7 col-sm-5">
-                <h5>Our Address</h5>
-                <address>
-		              121, Clear Water Bay Road<br>
-		              Clear Water Bay, Kowloon<br>
-		              HONG KONG<br>
-                  <!-- can use both <i> and <span> elements to include font awesome icons -->
-		              <i class="fa fa-phone fa-lg"></i> +852 1234 5678<br>
-		              <i class="fa fa-fax fa-lg"></i> +852 8765 4321<br>
-		              <i class="fa fa-envelope fa-lg"></i> <a href="mailto:confusion@food.net">confusion@food.net</a>
-		           </address>
-              </div>
-              <!-- will be stacked below the two above elements for extra small sizes, and side by side
-                  with them for the other screen sizes (2 + 5 + 4 = 11 columns). In both cases the row
-                  ends up occupying 11 columns and will have the 1st column offset. align-self-center
-                  causes this content to align itself to the center of the content direction (so vertically
-                  in this case, as it's a column) -->
-              <div class="col-12 col-sm-4 align-self-center">
-                  <div class="text-center">
-                        <!-- btn is a Bootstrap class for buttons. btn-social-icon is part of Bootstrap-social for
-                            social network related icons like btn-google, etc. -->
-                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
-                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
-                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
-                  </div>
-              </div>
+    <div class="container">
+      <div class="row">
+        <!-- extra small screens will occupy 4 columns whereas bigger ones will take 2
+            offset-1 will offset the elements by one column to the right on all screens -->
+        <div class="col-4 offset-1 col-sm-2">
+          <h5>Links</h5>
+          <!-- list-unstyled removes bullet points from a list -->
+          <ul class="list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="./aboutus.html">About</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="./contactus.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- extra small will occupy 7 (for a total of 11 with the above) and the rest 5 -->
+        <div class="col-7 col-sm-5">
+          <h5>Our Address</h5>
+          <address>
+            121, Clear Water Bay Road<br>
+            Clear Water Bay, Kowloon<br>
+            HONG KONG<br>
+            <!-- can use both <i> and <span> elements to include font awesome icons -->
+            <i class="fa fa-phone fa-lg"></i> +852 1234 5678<br>
+            <i class="fa fa-fax fa-lg"></i> +852 8765 4321<br>
+            <i class="fa fa-envelope fa-lg"></i> <a href="mailto:confusion@food.net">confusion@food.net</a>
+         </address>
+        </div>
+        <!-- will be stacked below the two above elements for extra small sizes, and side by side
+            with them for the other screen sizes (2 + 5 + 4 = 11 columns). In both cases the row
+            ends up occupying 11 columns and will have the 1st column offset. align-self-center
+            causes this content to align itself to the center of the content direction (so vertically
+            in this case, as it's a column) -->
+        <div class="col-12 col-sm-4 align-self-center">
+          <div class="text-center">
+                <!-- btn is a Bootstrap class for buttons. btn-social-icon is part of Bootstrap-social for
+                    social network related icons like btn-google, etc. -->
+                <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
+                <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
+                <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
+                <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
+                <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+                <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
           </div>
-          <div class="row">
-              <!-- will occupy enough columns as required by the content itself justify-content-center
-              is a Bootstrap class that leverages CSS Flexbox to horizontally align items to the center
-              (or vertically, if the content direction is top to down instead of the row's left to right)-->
-              <div class="col-auto justify-content-center">
-                  <p>© Copyright 2018 Ristorante Con Fusion</p>
-              </div>
+        </div>
+      </div>
+      <div class="row">
+          <!-- will occupy enough columns as required by the content itself justify-content-center
+          is a Bootstrap class that leverages CSS Flexbox to horizontally align items to the center
+          (or vertically, if the content direction is top to down instead of the row's left to right)-->
+          <div class="col-auto justify-content-center">
+              <p>© Copyright 2018 Ristorante Con Fusion</p>
           </div>
       </div>
+    </div>
   </footer>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS. Loaded at the end of the body
