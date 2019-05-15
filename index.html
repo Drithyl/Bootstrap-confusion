@@ -316,12 +316,8 @@
 
           <!-- buttons to play and pause the carousel sliding. These are styled in styles.css -->
           <div class="btn-group" id="carouselButtons">
-            <button class="btn btn-danger btn-sm" id="carousel-pause">
+            <button class="btn btn-danger btn-sm" id="carouselButton">
               <span class="fa fa-pause"></span>
-            </button>
-
-            <button class="btn btn-danger btn-sm" id="carousel-play">
-              <span class="fa fa-play"></span>
             </button>
           </div>
         </div>
@@ -468,16 +464,29 @@
       $("#mycarousel").carousel({interval: 2000});
 
       //activate the pause button's behaviour when the user clicks
-      $("#carousel-pause").click(function()
+      $("#carouselButton").click(function()
       {
-        $("#mycarousel").carousel("pause");
-      });
+        //use the inner span in the button to check for the font awesome icon
+        //to decide whether the button is in pause or in play mode
+        if ($("#carouselButton").children("span").hasClass("fa-pause"))
+        {
+          //pause the carousel sliding
+          $("#mycarousel").carousel("pause");
 
-      //activate the play button's behaviour when the user clicks
-      $("#carousel-play").click(function()
-      {
-        //"cycle" is how the carousel plays
-        $("#mycarousel").carousel("cycle");
+          //remove the pause icon class since we clicked, and add the play icon class
+          $("#carouselButton").children("span").removeClass("fa-pause");
+          $("#carouselButton").children("span").addClass("fa-play");
+        }
+
+        else if ($("#carouselButton").children("span").hasClass("fa-play"))
+        {
+          //start the carousel automatic sliding
+          $("#mycarousel").carousel("cycle");
+
+          //remove the play icon class since we clicked, and add the pause icon class
+          $("#carouselButton").children("span").removeClass("fa-play");
+          $("#carouselButton").children("span").addClass("fa-pause");
+        }
       });
     });
   </script>
