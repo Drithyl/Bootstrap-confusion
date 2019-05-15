@@ -1,0 +1,94 @@
+
+/********************************************************
+*             COMPILING LESS INTO CSS                   *
+* Use cmd command in this file's dir:                   *
+* lessc [this filename].less [new filename].css         *
+* must have the less node module installed to recognize *
+* the lessc command                                     *
+********************************************************/
+
+
+@lt-gray: #ddd;
+@background-dark: #512DA8;
+@background-light: #9575CD;
+@background-pale: #D1C4E9;
+
+//Height variables
+@carousel-item-height: 300px;
+
+//margin/padding mixin
+.zero-margin(@pad-up-dn: 0px, @pad-left-right: 0px) {
+    margin: 0px auto;
+    padding: @pad-up-dn @pad-left-right;
+}
+
+.row-header {
+  //use the mixin above
+  .zero-margin();
+}
+
+.row-content {
+  //use the mixin with non-default values
+  .zero-margin(50px, 0px);
+  border-bottom: 1px ridge;
+  min-height: 400px;
+}
+
+.footer {
+  .zero-margin(20px, 0px);
+  background-color: @background-pale;
+}
+
+// Edit the already custom Bootstrap class jumbotron to fit our needs
+.jumbotron {
+  .zero-margin(70px, 30px);
+  background: @background-light;
+}
+
+address {
+  font-size: 80%;
+  margin: 0px;
+  color: #0f0f0f;
+}
+
+//Give padding to the body so that the fixed navbar does not cover the top elements
+body {
+  padding: 50px 0px 0px 0px;
+  z-index: 0;
+}
+
+.navbar-dark {
+  background-color: @background-dark;
+}
+
+//Give the tabs a nice clean border on the sides and bottom to enclose them properly
+.tab-content {
+  border-left: 1px solid @lt-gray;
+  border-right: 1px solid @lt-gray;
+  border-bottom: 1px solid @lt-gray;
+  padding: 10px;
+}
+
+.carousel {
+  background: @background-dark;
+
+  //nest this style to give it scope
+  .carousel-item {
+    height: @carousel-item-height;
+
+    //nest again so only img inside carousel items take this style
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-height: 300px;
+    }
+  }
+}
+
+//Reposition the carousel play and pause buttons to the right corner
+#carouselButtons {
+  right: 0px;
+  position: absolute;
+  bottom: 0px;
+}
