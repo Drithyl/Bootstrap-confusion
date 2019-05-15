@@ -68,6 +68,101 @@
     </div>
   </nav>
 
+  <div id="reserveModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Reserve a Table</h4>
+
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <form>
+            <!-- container-fluid is required to use the grid system within the modal,
+                according to bootstrap's documentation. Not that it seems to do anything! -->
+            <div class="container-fluid">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="numberOfGuests"><b>Number of Guests</b></label>
+
+                <div class="col-sm-6 align-self-center">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="1" name="guests">
+                    <label class="form-check-label">1</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="2" name="guests">
+                    <label class="form-check-label">2</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="3" name="guests">
+                    <label class="form-check-label">3</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="4" name="guests">
+                    <label class="form-check-label">4</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="5" name="guests">
+                    <label class="form-check-label">5</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="6" name="guests">
+                    <label class="form-check-label">6</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="section"><b>Section</b></label>
+
+                <div class="col-sm-6 align-self-center">
+                  <!-- btn-group and btn-group-toggle gives these radio buttons the toggle box style.
+                      The data-toggle is required to trigger the necessary JS for their behaviour -->
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-success active">
+                      <input type="radio" name="section" checked>Non-Smoking
+                    </label>
+
+                    <label class="btn btn-danger">
+                      <input type="radio" name="section">Smoking
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-12 col-sm-2 col-form-label" for="dateAndTime"><b>Date and Time</b></label>
+
+                <div class="col-6 col-sm-4 align-self-center">
+                  <input type="date" class="form-control" id="date" name="date">
+                </div>
+
+                <div class="col-6 col-sm-4 align-self-center">
+                  <input type="time" class="form-control" id="time" name="time">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                  <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal code here. Bootstrap recommends that all modal code be at the start of the page. -->
   <!-- modal bootstrap's class allows us to create modals. fade gives it the fade in animation. -->
   <div id="loginModal" class="modal fade" role="dialog">
@@ -75,7 +170,7 @@
     <div class="modal-dialog modal-lg" role="content">
       <!-- modal-content sets the content of the modal within the div -->
       <div class="modal-content">
-        <!-- modal-header specifies the header of the modal content (optional) -->
+        <!-- modal-header specifies the header of the modal content -->
         <div class="modal-header">
           <!-- style this as a modal-title -->
           <h4 class="modal-title">Login</h4>
@@ -87,7 +182,7 @@
           </button>
         </div>
 
-        <!-- modal-body specifies the body of the modal content (optional) -->
+        <!-- modal-body specifies the body of the modal content (optional, required for padding) -->
         <div class="modal-body">
           <form>
             <div class="form-row">
@@ -143,11 +238,7 @@
               </div>
 
               <div class="col-6 col-sm-3 align-self-center">
-                <!-- data-toggle tooltip allows us to add a tooltip to this element thanks to the help of a script that we invoke
-                    at the bottom of this page. data-html true means we can construct the tooltip using HTML. data-placement bottom
-                    means the tooltip will be added to the bottom of the element. title is where the content of the tooltip will be
-                    enclosed, where we can use HTML. -->
-                <a class="btn btn-small btn-block btn-warning" data-toggle="tooltip" data-html="true" data-placement="bottom" title="Or Call us at <br><strong>+852 12345678</strong>" href="#reserve-card">
+                <a class="btn btn-small btn-block btn-warning" data-toggle="modal" data-target="#reserveModal">
                   Reserve Table
                 </a>
               </div>
@@ -292,77 +383,6 @@
         </div>
       </div>
     </div>
-
-    <div class="row row-content">
-      <div class="col-12 col-sm-8 offset-sm-2">
-        <div class="card" id="reserve-card">
-          <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-          <div class="card-body">
-            <form>
-              <div class="form-group row">
-                <label for="guests" class="col-sm-2 col-form-label">Number of Guests</label>
-
-                <div class="col-sm-6 align-self-center">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" value="1" name="guests">
-                    <label class="form-check-label">1</label>
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" value="2" name="guests">
-                    <label class="form-check-label">2</label>
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" value="3" name="guests">
-                    <label class="form-check-label">3</label>
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" value="4" name="guests">
-                    <label class="form-check-label">4</label>
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" value="5" name="guests">
-                    <label class="form-check-label">5</label>
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" value="6" name="guests">
-                    <label class="form-check-label">6</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <!-- This one will occupy the entire row for xs and s screen sizes and 2 for the rest -->
-                <label for="dateandtime" class="col-12 col-sm-2 col-form-label">Date and Time</label>
-                <!-- This one will occupy 5 rows for xs and s screen sizes and 3 for the rest -->
-                <div class="col-6 col-sm-4 align-self-center">
-                  <input type="date" class="form-control" id="date" name="date">
-                </div>
-                <!-- This one will occupy 7 rows for xs and s screen sizes and 7 for the rest -->
-                <div class="col-6 col-sm-4 align-self-center">
-                  <input type="time" class="form-control" id="time" name="time">
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <div class="offset-sm-2 col-sm-10">
-                  <button type="submit" class="btn btn-primary">
-                    Reserve
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md">
-      </div>
-    </div>
   </div>
 
   <!-- footer is one of our custom css classes defined in the styles.css file -->
@@ -429,15 +449,6 @@
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-  <!-- this script is required to activate tooltips. It uses jQuery to call upon the tooltip()
-      functionality for any element with the attribute data-toggle set to "tooltip" -->
-  <script>
-    $(document).ready(function()
-    {
-      $("[data-toggle='tooltip']").tooltip();
-    });
-  </script>
 </body>
 
 </html>
