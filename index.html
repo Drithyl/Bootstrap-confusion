@@ -60,7 +60,7 @@
         <span class="navbar-text">
           <!-- data-toggle modal triggers the JS behaviour included in bootstrap,
               and data-target sets the target to be the loginModal we created. -->
-          <a data-toggle="modal" data-target="#loginModal">
+          <a id="login-button">
             <span class="fa fa-sign-in"></span> Login
           </a>
         </span>
@@ -238,7 +238,7 @@
               </div>
 
               <div class="col-6 col-sm-3 align-self-center">
-                <a class="btn btn-small btn-block btn-warning" data-toggle="modal" data-target="#reserveModal">
+                <a class="btn btn-small btn-block btn-warning" id="reserve-button">
                   Reserve Table
                 </a>
               </div>
@@ -460,6 +460,16 @@
     //wait for the document to be loaded to do anything
     $(document).ready(function()
     {
+      $("#reserve-button").click(function()
+      {
+        $("#reserveModal").modal("show");
+      });
+
+      $("#login-button").click(function()
+      {
+        $("#loginModal").modal("show");
+      });
+
       //sets the automatic sliding interval of the carousel to 2000 ms
       $("#mycarousel").carousel({interval: 2000});
 
